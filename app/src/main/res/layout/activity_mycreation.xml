@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_bg_list_sticker"
     tools:context=".ui.mycreation.MycreationActivity">
 
     <RelativeLayout
@@ -40,8 +41,7 @@
                 android:layout_centerVertical="true"
                 android:visibility="gone"
                 android:layout_marginStart="16dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_exit" />
+                android:background="?attr/selectableItemBackgroundBorderless" />
             <ImageView
                 android:id="@+id/btn"
                 android:layout_width="32dp"
@@ -74,8 +74,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="60dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_tick_all" />
+                android:background="?attr/selectableItemBackgroundBorderless" />
 
             <ImageView
                 android:id="@+id/btnDeleteTick"
@@ -170,7 +169,7 @@
                     android:fontFamily="@font/londrina_solid_regular"
                     android:text="@string/share"
                     android:gravity="center"
-                    android:textColor="@color/red"
+                    android:textColor="@color/orange"
                     android:textSize="20sp" />
             </FrameLayout>
 
@@ -203,7 +202,7 @@
                     android:text="@string/download"
                     android:gravity="center"
                     android:layout_marginStart="20dp"
-                    android:textColor="@color/red"
+                    android:textColor="@color/orange"
                     android:textSize="20sp" />
             </FrameLayout>
 
@@ -231,27 +230,19 @@
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/img_image_app" />
-        <ImageView
-            android:id="@+id/imgTxtper"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_below="@+id/imgImage"
-            android:layout_marginHorizontal="70dp"
-            android:scaleType="fitXY"
-            android:layout_marginTop="-30dp"
-            android:src="@drawable/img_text_mycreation" />
+            android:src="@drawable/img_no_image" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgImage"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/londrina_solid_regular"
+            android:fontFamily="@font/montserrat_italic"
             android:gravity="center"
             android:text="@string/you_don_t_have_any_character"
-            android:textColor="#9F9F9F"
-            android:textSize="16sp" />
+            android:textColor="@color/white"
+            android:textSize="12sp" />
 
     </RelativeLayout>
 

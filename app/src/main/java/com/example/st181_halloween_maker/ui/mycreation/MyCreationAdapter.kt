@@ -7,13 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.girlmaker.create.avatar.creator.R
-import com.girlmaker.create.avatar.creator.databinding.ItemMyCreationBinding
+import com.example.st181_halloween_maker.R
+
 import com.example.st181_halloween_maker.core.extensions.gone
 import com.example.st181_halloween_maker.core.extensions.onSingleClick
 import com.example.st181_halloween_maker.core.extensions.show
 import com.girlmaker.create.avatar.creator.model.MyCreationModel
 import com.example.st181_halloween_maker.core.utils.SystemUtils.shimmerDrawable
+import com.example.st181_halloween_maker.databinding.ItemMyCreationBinding
 
 class MyCreationAdapter(val context: Context) : RecyclerView.Adapter<MyCreationAdapter.MyLibraryViewHolder>() {
     private var listMyLibrary: ArrayList<MyCreationModel> = arrayListOf()

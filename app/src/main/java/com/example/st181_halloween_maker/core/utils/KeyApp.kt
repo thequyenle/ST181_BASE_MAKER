@@ -7,7 +7,7 @@ object KeyApp {
     const val PATH_KEY = "PATH_KEY"
     const val LOAD_KEY = "LOAD_KEY"
     const val STATUS_KEY = "STATUS_KEY"
-    const val JJK_KEY = "JJK_KEY"
+    const val HALLOWEEN_KEY = "HALLOWEEN_KEY"
     const val FIRST_APP_1 = "FIRST_APP_1"
     const val PREFS_NAME = "PREFS_NAME"
     const val KEY_OPEN_ADS = "KEY_OPEN_ADS"
@@ -39,8 +39,8 @@ object KeyApp {
     const val NOTIFICATION_PERMISSION_CODE = 997
     const val PICK_IMAGE_REQUEST_CODE = 103
 
-    const val DOWNLOAD_ALBUM = "JJK Maker Album"
-    const val DOWNLOAD_ALBUM1 = "JJK Maker Album1"
+    const val DOWNLOAD_ALBUM = "HALLOWEEN Maker Album"
+    const val DOWNLOAD_ALBUM1 = "HALLOWEEN Maker Album1"
     const val AVATAR = "avatar"
 
     const val FROM_SETTINGS = "FROM_SETTINGS"
@@ -173,14 +173,14 @@ object KeyApp {
     const val NAV_BACK_EFFECT = 34
 
 
-    const val JJK = "girl"
+    const val HALLOWEEN = "halloween"
 
-    const val JJK_FIRST_PNG = "1.png"
-    const val JJK_FIRST_JPG = "1.jpg"
-    const val JJK_FIRST_WEBP = "4.webp"
+    const val HALLOWEEN_FIRST_PNG = "1.png"
+    const val HALLOWEEN_FIRST_JPG = "1.jpg"
+    const val HALLOWEEN_FIRST_WEBP = "4.webp"
 
-    const val JJK_ASSET = "file:///android_asset/girl/"
+    const val HALLOWEEN_ASSET = "file:///android_asset/halloween/"
 
-    const val JJK_FILE = "girl.txt"
-    const val JJK_AVAILABLE_FILE = "datavaliable.txt"
+    const val HALLOWEEN_FILE = "halloween.txt"
+    const val HALLOWEEN_AVAILABLE_FILE = "datavaliable.txt"
 }

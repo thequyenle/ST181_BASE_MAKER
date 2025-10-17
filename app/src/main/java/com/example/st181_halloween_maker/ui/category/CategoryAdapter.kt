@@ -6,28 +6,29 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.girlmaker.create.avatar.creator.databinding.ItemCategoryBinding
+
 import com.example.st181_halloween_maker.core.extensions.onSingleClick
 import com.example.st181_halloween_maker.core.utils.SystemUtils.shimmerDrawable
+import com.example.st181_halloween_maker.databinding.ItemCategoryBinding
 import kotlin.collections.ArrayList
 
 
 class CategoryAdapter(val context: Context): RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
     private val avatarList: ArrayList<String> = arrayListOf()
-    var onItemClick: ((String,Int) -> Unit)? = null
+    var onItemClick: ((String) -> Unit)? = null
 
     inner class CategoryViewHolder(private val binding : ItemCategoryBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(path:String, position: Int){
                 Glide.with(binding.root).load(path).placeholder(shimmerDrawable).error(shimmerDrawable).into(binding.imvImage)
 
             binding.root.onSingleClick {
-                onItemClick?.invoke(path,position)
+                onItemClick?.invoke(path)
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
-        val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CategoryViewHolder(binding)
     }
 

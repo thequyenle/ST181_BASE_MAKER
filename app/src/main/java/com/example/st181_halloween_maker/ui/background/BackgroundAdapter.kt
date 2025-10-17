@@ -6,12 +6,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.girlmaker.create.avatar.creator.databinding.ItemBackgorundBinding
+
 import com.example.st181_halloween_maker.core.extensions.gone
 import com.example.st181_halloween_maker.core.extensions.show
 import com.girlmaker.create.avatar.creator.model.BackGroundModel
 import com.example.st181_halloween_maker.core.utils.KeyApp.BODY
 import com.example.st181_halloween_maker.core.utils.SystemUtils.shimmerDrawable
+import com.example.st181_halloween_maker.databinding.ItemBackgorundBinding
 import kotlin.apply
 import kotlin.text.contains
 

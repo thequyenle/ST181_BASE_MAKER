@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_bg_app"
     tools:context=".ui.view.ViewActivity">
 
 
@@ -128,7 +129,7 @@
                 android:text="@string/share"
                 android:gravity="center"
                 android:layout_marginStart="10dp"
-                android:textColor="@color/red"
+                android:textColor="@color/orange"
                 android:textSize="20sp" />
         </FrameLayout>
 
@@ -161,7 +162,7 @@
                 android:text="@string/download"
                 android:gravity="center"
                 android:layout_marginStart="25dp"
-                android:textColor="@color/red"
+                android:textColor="@color/orange"
                 android:textSize="20sp" />
         </FrameLayout>
 

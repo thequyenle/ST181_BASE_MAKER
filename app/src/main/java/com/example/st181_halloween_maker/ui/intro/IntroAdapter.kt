@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.girlmaker.create.avatar.creator.databinding.ItemIntroBinding
 import com.example.st181_halloween_maker.core.extensions.select
+import com.example.st181_halloween_maker.databinding.ItemIntroBinding
 import com.girlmaker.create.avatar.creator.model.IntroModel
 
 import kotlin.apply

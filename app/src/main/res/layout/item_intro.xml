@@ -8,7 +8,7 @@
         style="@style/custom_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/londrina_solid_regular"
+        android:fontFamily="@font/creepstercaps_regular"
         android:gravity="center"
         android:layout_marginBottom="40dp"
         android:textColor="@color/white"
