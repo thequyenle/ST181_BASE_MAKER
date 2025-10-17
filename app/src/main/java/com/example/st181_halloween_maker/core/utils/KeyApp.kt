@@ -173,14 +173,14 @@ object KeyApp {
     const val NAV_BACK_EFFECT = 34
 
 
-    const val HALLOWEEN = "halloween"
+    const val HALLOWEEN = "data"
 
     const val HALLOWEEN_FIRST_PNG = "1.png"
     const val HALLOWEEN_FIRST_JPG = "1.jpg"
     const val HALLOWEEN_FIRST_WEBP = "4.webp"
 
-    const val HALLOWEEN_ASSET = "file:///android_asset/halloween/"
+    const val HALLOWEEN_ASSET = "file:///android_asset/data/"
 
-    const val HALLOWEEN_FILE = "halloween.txt"
+    const val HALLOWEEN_FILE = "data.txt"
     const val HALLOWEEN_AVAILABLE_FILE = "datavaliable.txt"
 }

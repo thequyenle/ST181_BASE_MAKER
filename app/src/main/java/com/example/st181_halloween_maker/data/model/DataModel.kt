@@ -1,5 +1,7 @@
-package com.girlmaker.create.avatar.creator.model
+package com.example.st181_halloween_maker.data.model
 
+import com.example.st181_halloween_maker.data.custom.ItemColorModel
+import com.example.st181_halloween_maker.data.custom.ItemNavCustomModel
 
 
 data class DataModel(
@@ -17,4 +19,4 @@ data class DataModel(
     val listIsSelectedItem: ArrayList<Boolean> = arrayListOf(),
     val listPositionColorItem: ArrayList<Int> = arrayListOf(),
 
-)
+    )

@@ -12,7 +12,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
-import com.girlmaker.create.avatar.creator.model.DataModel
+import com.example.st181_halloween_maker.data.model.DataModel
 import com.example.st181_halloween_maker.core.utils.KeyApp.DATA_DEFAULT
 import com.example.st181_halloween_maker.core.utils.KeyApp.DOWNLOAD_ALBUM
 import com.example.st181_halloween_maker.core.utils.KeyApp.HALLOWEEN_AVAILABLE_FILE

@@ -17,7 +17,7 @@ import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerDrawable
 import com.google.android.gms.tasks.Task
 import com.google.android.play.core.review.ReviewManagerFactory
-import com.girlmaker.create.avatar.creator.model.CustomizeModel
+import com.example.st181_halloween_maker.data.custom.CustomizeModel
 import com.example.st181_halloween_maker.core.utils.KeyApp.COUNT_BACK
 import com.example.st181_halloween_maker.core.utils.KeyApp.COUNT_BACK_KEY
 import com.example.st181_halloween_maker.core.utils.KeyApp.FIRST_APP_1

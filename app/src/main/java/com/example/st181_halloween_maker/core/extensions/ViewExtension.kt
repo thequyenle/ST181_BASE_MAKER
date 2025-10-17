@@ -51,17 +51,23 @@ internal fun View.hide() {
     visibility = View.INVISIBLE
 }
 
-internal fun View.gone() {
-    visibility = View.GONE
-}
+// ----------------------------
+// Visibility extensions
+// ----------------------------
+fun View.visible() { visibility = View.VISIBLE }
+fun View.invisible() { visibility = View.INVISIBLE }
+fun View.gone() { visibility = View.GONE }
 
-internal fun Activity.showToast(message: Int, duration: Int = Toast.LENGTH_SHORT) {
+// ----------------------------
+// Toast extensions
+// ----------------------------
+fun Activity.showToast(message: Int, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, ContextCompat.getString(this, message), duration).show()
 }
-
-internal fun Activity.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
+fun Activity.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, message, duration).show()
 }
+
 
 
 internal fun Activity.startIntent(targetActivity: Class<*>) {

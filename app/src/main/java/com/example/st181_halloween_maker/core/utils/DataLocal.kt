@@ -2,73 +2,17 @@ package com.example.st181_halloween_maker.core.utils
 
 
 import android.content.Context
-import android.content.res.AssetManager
-import android.util.Log
 import com.example.st181_halloween_maker.R
-import com.girlmaker.create.avatar.creator.model.ColorModel
-import com.girlmaker.create.avatar.creator.model.CustomizeModel
-import com.girlmaker.create.avatar.creator.model.Dream
 import com.girlmaker.create.avatar.creator.model.IntroModel
 import com.girlmaker.create.avatar.creator.model.LanguageModel
-import com.girlmaker.create.avatar.creator.model.LayerModel
-import com.girlmaker.create.avatar.creator.model.PartAPI
 
 import com.example.st181_halloween_maker.core.utils.KeyApp.ASSET_MANAGER
-import com.example.st181_halloween_maker.core.utils.KeyApp.AVATAR
 import com.example.st181_halloween_maker.core.utils.KeyApp.AVATAR_ASSET
 import com.example.st181_halloween_maker.core.utils.KeyApp.AVATAR_STICKER_ASSET
-import com.example.st181_halloween_maker.core.utils.KeyApp.BACK_EARS
-import com.example.st181_halloween_maker.core.utils.KeyApp.BACK_EFFECT
-import com.example.st181_halloween_maker.core.utils.KeyApp.BACK_HAIR
-import com.example.st181_halloween_maker.core.utils.KeyApp.BAG
-import com.example.st181_halloween_maker.core.utils.KeyApp.BASE_URL
-import com.example.st181_halloween_maker.core.utils.KeyApp.BASE_URL_PREVENTIVE
 import com.example.st181_halloween_maker.core.utils.KeyApp.BG_ASSET
-import com.example.st181_halloween_maker.core.utils.KeyApp.BODY
-import com.example.st181_halloween_maker.core.utils.KeyApp.BODY_PAINT
-import com.example.st181_halloween_maker.core.utils.KeyApp.BOOK
-import com.example.st181_halloween_maker.core.utils.KeyApp.BOTTOM_HAIR
-import com.example.st181_halloween_maker.core.utils.KeyApp.CLIP_HAIR
-import com.example.st181_halloween_maker.core.utils.KeyApp.EARRINGS
-import com.example.st181_halloween_maker.core.utils.KeyApp.EYEBROW
-import com.example.st181_halloween_maker.core.utils.KeyApp.EYES
-import com.example.st181_halloween_maker.core.utils.KeyApp.FACE
-import com.example.st181_halloween_maker.core.utils.KeyApp.FACE_PAINT_1
-import com.example.st181_halloween_maker.core.utils.KeyApp.FACE_PAINT_2
-import com.example.st181_halloween_maker.core.utils.KeyApp.FRONT_EARS
-import com.example.st181_halloween_maker.core.utils.KeyApp.FRONT_HAIR
-import com.example.st181_halloween_maker.core.utils.KeyApp.GLASSES
-import com.example.st181_halloween_maker.core.utils.KeyApp.HAT
-import com.example.st181_halloween_maker.core.utils.KeyApp.HORN
-import com.example.st181_halloween_maker.core.utils.KeyApp.JACKET
-import com.example.st181_halloween_maker.core.utils.KeyApp.MOUTH
-import com.example.st181_halloween_maker.core.utils.KeyApp.NECKLACE
-import com.example.st181_halloween_maker.core.utils.KeyApp.NOSE
-import com.example.st181_halloween_maker.core.utils.KeyApp.OTHER
-import com.example.st181_halloween_maker.core.utils.KeyApp.PAINT
-import com.example.st181_halloween_maker.core.utils.KeyApp.PEN
-import com.example.st181_halloween_maker.core.utils.KeyApp.PET
-import com.example.st181_halloween_maker.core.utils.KeyApp.SHIRT
-import com.example.st181_halloween_maker.core.utils.KeyApp.SHOE
-import com.example.st181_halloween_maker.core.utils.KeyApp.SIDE_HAIR
-import com.example.st181_halloween_maker.core.utils.KeyApp.SOCKS
-import com.example.st181_halloween_maker.core.utils.KeyApp.SUB_DOMAIN
-import com.example.st181_halloween_maker.core.utils.KeyApp.TABLE
-import com.example.st181_halloween_maker.core.utils.KeyApp.TAIL
-import com.example.st181_halloween_maker.core.utils.KeyApp.TOP_HAIR
 
-import com.example.st181_halloween_maker.core.utils.SystemUtils.isFailBaseURL
-import kotlin.collections.first
 import kotlin.collections.forEach
-import kotlin.collections.forEachIndexed
-import kotlin.collections.map
-import kotlin.collections.mapIndexed
 import kotlin.collections.sortedWith
-import kotlin.collections.toCollection
-import kotlin.let
-import kotlin.ranges.until
-import kotlin.text.isNotEmpty
-import kotlin.text.split
 import kotlin.text.toIntOrNull
 
 object DataLocal {
