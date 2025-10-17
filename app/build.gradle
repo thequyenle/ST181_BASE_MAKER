@@ -91,8 +91,18 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.firebase:firebase-messaging:23.3.1'
     implementation 'com.google.firebase:firebase-config:21.5.0'
-
-
+    // Convert JSON
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    // Gson
+    implementation 'com.google.code.gson:gson:2.10.1'
+    // Optional: Room + Kotlin Coroutines
+    implementation "androidx.room:room-ktx:2.6.1"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.0"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.9.0"
+    //Lifecycle runtime (nếu dùng lifecycleScope)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.9.0"
     implementation retrofit_lib
     implementation okhttp_lib
 }
