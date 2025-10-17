@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
+    android:background="@drawable/img_bg_custom"
     android:layout_height="match_parent"
     tools:context=".ui.customize.CustomizeActivity">
 
@@ -51,7 +52,7 @@
                     android:text="@string/next"
                     android:textSize="16sp"
                     android:layout_gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/orange"/>
             </FrameLayout>
 
 
@@ -135,8 +136,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
                 android:orientation="horizontal"
                 android:paddingVertical="9dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -163,7 +164,7 @@
         android:id="@+id/layoutRcv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#FFE1D2"
+        android:background="@drawable/img_bg_layer_cus"
         app:layout_constraintBottom_toTopOf="@id/layoutNav"
         app:layout_constraintTop_toBottomOf="@+id/gl0625">
 
@@ -180,252 +181,17 @@
 
     <!-- Navigation -->
 
-    <FrameLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/layoutNav"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:background="#FFE1D2"
+        android:background="@drawable/img_bg_layer_cus"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="6dp"
-            android:scrollbars="none">
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_navi">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/navBody"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_body" />
-
-                <ImageView
-                    android:id="@+id/navFace"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_face" />
-
-                <ImageView
-                    android:id="@+id/navBodyPaint"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_body_paint" />
-
-                <ImageView
-                    android:id="@+id/navFacepaint1"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_face_paint_1" />
-
-                <ImageView
-                    android:id="@+id/navFacepaint2"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_face_paint_2" />
-
-                <ImageView
-                    android:id="@+id/navEyes"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_eyes" />
-
-                <ImageView
-                    android:id="@+id/navEyebrow"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_eyebrow" />
-
-                <ImageView
-                    android:id="@+id/navBackEars"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_back_ears" />
-                <ImageView
-                    android:id="@+id/navFrontEars"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_front_ears" />
-
-                <ImageView
-                    android:id="@+id/navNose"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_nose" />
-
-                <ImageView
-                    android:id="@+id/navMouth"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_mouth" />
-
-                <ImageView
-                    android:id="@+id/navFrontHair"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_front_hair" />
-
-                <ImageView
-                    android:id="@+id/navBackHair"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_back_hair" />
-                <ImageView
-                    android:id="@+id/navTopHair"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_top_hair" />
-                <ImageView
-                    android:id="@+id/navBottomHair"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_bottom_hair" />
-                <ImageView
-                    android:id="@+id/navSideHair"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_side_hair" />
-                <ImageView
-                    android:id="@+id/navShirt"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_shirt" />
-                <ImageView
-                    android:id="@+id/navJacket"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_jacket" />
-                <ImageView
-                    android:id="@+id/navPant"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_pant" />
-                <ImageView
-                    android:id="@+id/navSocks"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_socks" />
-                <ImageView
-                    android:id="@+id/navShoe"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_shoe" />
-                <ImageView
-                    android:id="@+id/navEarrings"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_earrings" />
-                <ImageView
-                    android:id="@+id/navNecklace"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_necklace" />
-                <ImageView
-                    android:id="@+id/navGlasses"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_glasses" />
-                <ImageView
-                    android:id="@+id/navHat"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_hat" />
-                <ImageView
-                    android:id="@+id/navHorn"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_horn" />
-                <ImageView
-                    android:id="@+id/navClipHair"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_clip_hair" />
-                <ImageView
-                    android:id="@+id/navTable"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_table" />
-                <ImageView
-                    android:id="@+id/navPen"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_pen" />
-                <ImageView
-                    android:id="@+id/navBook"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_book" />
-                <ImageView
-                    android:id="@+id/navBag"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_bag" />
-                <ImageView
-                    android:id="@+id/navPet"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_pet" />
-                <ImageView
-                    android:id="@+id/navTail"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_tail" />
-                <ImageView
-                    android:id="@+id/navOther"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_other" />
-                <ImageView
-                    android:id="@+id/navBackEffect"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/nav_back_effect" />
-
-            </LinearLayout>
-
-
-        </HorizontalScrollView>
-    </FrameLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

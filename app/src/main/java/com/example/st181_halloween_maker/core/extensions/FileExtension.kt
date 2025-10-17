@@ -15,7 +15,7 @@ import android.view.View
 import com.girlmaker.create.avatar.creator.model.DataModel
 import com.example.st181_halloween_maker.core.utils.KeyApp.DATA_DEFAULT
 import com.example.st181_halloween_maker.core.utils.KeyApp.DOWNLOAD_ALBUM
-import com.example.st181_halloween_maker.core.utils.KeyApp.JJK_AVAILABLE_FILE
+import com.example.st181_halloween_maker.core.utils.KeyApp.HALLOWEEN_AVAILABLE_FILE
 import com.example.st181_halloween_maker.core.utils.KeyApp.PICK_IMAGE_REQUEST_CODE
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -181,7 +181,7 @@ fun readListFromFile(context: Context, fileName: String): ArrayList<DataModel> {
 }
 fun readDataDefaultAssets(context: Context): ArrayList<DataModel> {
     return try {
-        val json = context.assets.open("$DATA_DEFAULT/$JJK_AVAILABLE_FILE").bufferedReader().use { it.readText() }
+        val json = context.assets.open("$DATA_DEFAULT/$HALLOWEEN_AVAILABLE_FILE").bufferedReader().use { it.readText() }
         val type = object : TypeToken<ArrayList<DataModel>>() {}.type
         Gson().fromJson(json, type) ?: arrayListOf()
     } catch (e: Exception) {

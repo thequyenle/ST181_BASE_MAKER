@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_bg_custom"
     tools:context=".ui.background.BackgroundActivity">
 
     <RelativeLayout
@@ -50,7 +51,7 @@
                     android:text="@string/save"
                     android:textSize="16sp"
                     android:layout_gravity="center"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/orange"/>
             </FrameLayout>
 
         </RelativeLayout>
@@ -80,14 +81,14 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop" />
 
-
     </FrameLayout>
+
 
     <FrameLayout
         android:id="@+id/layoutRcv"
         android:layout_width="match_parent"
         android:layout_height="280dp"
-        android:background="#FFE1D2"
+        android:background="@drawable/img_bg_layer_cus"
         android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

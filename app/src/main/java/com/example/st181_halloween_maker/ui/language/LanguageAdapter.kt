@@ -6,8 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.girlmaker.create.avatar.creator.R
-import com.girlmaker.create.avatar.creator.databinding.ItemLanguageBinding
+import com.example.st181_halloween_maker.R
+import com.example.st181_halloween_maker.databinding.ItemLanguageBinding
+
 import com.girlmaker.create.avatar.creator.model.LanguageModel
 import kotlin.apply
 import kotlin.collections.forEach
@@ -17,7 +18,7 @@ class LanguageAdapter(val context: Context): RecyclerView.Adapter<LanguageAdapte
     private var currentActive = 0
     var onItemClick:((LanguageModel)-> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageViewHolder {
-        return LanguageViewHolder(ItemLanguageBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return LanguageViewHolder(ItemLanguageBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: LanguageViewHolder, position: Int) {
@@ -36,11 +37,11 @@ class LanguageAdapter(val context: Context): RecyclerView.Adapter<LanguageAdapte
                 txtLang.text = item.name
                 if (item.activate) {
                     rdbLang.setImageResource(R.drawable.ic_tick_lang)
-                    txtLang.setTextColor(ContextCompat.getColor(context, R.color.red))
+                    txtLang.setTextColor(ContextCompat.getColor(context, R.color.orange))
                     itemLang.background = ContextCompat.getDrawable(context, R.drawable.bg_tick_lang)
                 } else {
                     rdbLang.setImageResource(R.drawable.ic_not_tick_lang)
-                    txtLang.setTextColor(ContextCompat.getColor(context, R.color.red))
+                    txtLang.setTextColor(ContextCompat.getColor(context, R.color.orange))
                     itemLang.background = ContextCompat.getDrawable(context, R.drawable.bg_tick_lang)
 
                 }
