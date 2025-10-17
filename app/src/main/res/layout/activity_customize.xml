@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.customize.CustomizeActivity">
+
+    <RelativeLayout
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/tranf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back" />
+
+
+            <FrameLayout
+                android:id="@+id/btnNext"
+                android:layout_width="48dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_save_next"
+                android:layout_marginEnd="16dp">
+                <TextView
+                    android:id="@+id/txtNext"
+                    style="@style/custom_text"
+                    android:layout_width="40dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/londrina_solid_regular"
+                    android:text="@string/next"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/red"/>
+            </FrameLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <!-- Layout Image Layer -->
+
+    <FrameLayout
+        android:id="@+id/layoutCustomLayer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/gl0625"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actionBar"
+        app:layout_constraintVertical_bias="0.0" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="8dp"
+        android:background="@drawable/bg_bg_cus_item"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actionBar"
+        >
+
+        <ImageView
+            android:id="@+id/btnFlip"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_flip"/>
+        <ImageView
+            android:id="@+id/btnReset"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_reset"/>
+    </LinearLayout>
+
+    <!-- gl0625 -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl0625"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.625" />
+
+
+
+    <FrameLayout
+        android:id="@+id/layoutRcvColor"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:visibility="visible"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/gl0625">
+        <LinearLayout
+            android:id="@+id/layoutRcv2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:gravity="start"
+            android:layout_marginEnd="90dp"
+            android:background="@drawable/bg_color_cus"
+            android:layout_marginStart="16dp"
+            android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvColor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                android:paddingVertical="9dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="7"
+                tools:listitem="@layout/item_color" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/btnRandom"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_random"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@id/gl0625"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- RCV -->
+    <FrameLayout
+        android:id="@+id/layoutRcv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFE1D2"
+        app:layout_constraintBottom_toTopOf="@id/layoutNav"
+        app:layout_constraintTop_toBottomOf="@+id/gl0625">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvLayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="6dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="5"
+            tools:listitem="@layout/item_cus" />
+    </FrameLayout>
+
+    <!-- Navigation -->
+
+    <FrameLayout
+        android:id="@+id/layoutNav"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#FFE1D2"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="6dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/navBody"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_body" />
+
+                <ImageView
+                    android:id="@+id/navFace"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_face" />
+
+                <ImageView
+                    android:id="@+id/navBodyPaint"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_body_paint" />
+
+                <ImageView
+                    android:id="@+id/navFacepaint1"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_face_paint_1" />
+
+                <ImageView
+                    android:id="@+id/navFacepaint2"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_face_paint_2" />
+
+                <ImageView
+                    android:id="@+id/navEyes"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_eyes" />
+
+                <ImageView
+                    android:id="@+id/navEyebrow"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_eyebrow" />
+
+                <ImageView
+                    android:id="@+id/navBackEars"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_back_ears" />
+                <ImageView
+                    android:id="@+id/navFrontEars"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_front_ears" />
+
+                <ImageView
+                    android:id="@+id/navNose"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_nose" />
+
+                <ImageView
+                    android:id="@+id/navMouth"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_mouth" />
+
+                <ImageView
+                    android:id="@+id/navFrontHair"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_front_hair" />
+
+                <ImageView
+                    android:id="@+id/navBackHair"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_back_hair" />
+                <ImageView
+                    android:id="@+id/navTopHair"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_top_hair" />
+                <ImageView
+                    android:id="@+id/navBottomHair"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_bottom_hair" />
+                <ImageView
+                    android:id="@+id/navSideHair"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_side_hair" />
+                <ImageView
+                    android:id="@+id/navShirt"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_shirt" />
+                <ImageView
+                    android:id="@+id/navJacket"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_jacket" />
+                <ImageView
+                    android:id="@+id/navPant"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_pant" />
+                <ImageView
+                    android:id="@+id/navSocks"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_socks" />
+                <ImageView
+                    android:id="@+id/navShoe"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_shoe" />
+                <ImageView
+                    android:id="@+id/navEarrings"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_earrings" />
+                <ImageView
+                    android:id="@+id/navNecklace"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_necklace" />
+                <ImageView
+                    android:id="@+id/navGlasses"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_glasses" />
+                <ImageView
+                    android:id="@+id/navHat"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_hat" />
+                <ImageView
+                    android:id="@+id/navHorn"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_horn" />
+                <ImageView
+                    android:id="@+id/navClipHair"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_clip_hair" />
+                <ImageView
+                    android:id="@+id/navTable"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_table" />
+                <ImageView
+                    android:id="@+id/navPen"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_pen" />
+                <ImageView
+                    android:id="@+id/navBook"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_book" />
+                <ImageView
+                    android:id="@+id/navBag"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_bag" />
+                <ImageView
+                    android:id="@+id/navPet"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_pet" />
+                <ImageView
+                    android:id="@+id/navTail"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_tail" />
+                <ImageView
+                    android:id="@+id/navOther"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_other" />
+                <ImageView
+                    android:id="@+id/navBackEffect"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/nav_back_effect" />
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
