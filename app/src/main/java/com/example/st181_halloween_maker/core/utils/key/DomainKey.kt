@@ -5,4 +5,6 @@ object DomainKey {
     const val BASE_URL_PREVENTIVE = "https://lvtglobal.tech"
     const val SUB_DOMAIN = "/public/app/ST175_CatMask"
     const val HTTP = "https://"
+    const val AVATAR_CHARACTER_API = "avatar.png"
+    const val LAYER_EXTENSION = ".png"
 }

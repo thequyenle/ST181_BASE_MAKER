@@ -91,8 +91,7 @@ object AssetHelper {
 
     // ---------------------------------------------------------------------------------------------
 
-
-    fun getDataFromAsset(context: Context) {
+    fun getDataFromAsset(context: Context) : ArrayList<CustomizeModel> {
         val start = System.currentTimeMillis()
         val customList = ArrayList<CustomizeModel>()
         val assetManager = context.assets
@@ -124,8 +123,8 @@ object AssetHelper {
             for (i in 0 until sortedLayer.size) {
                 // Tách 1 và 30 (1.30)
                 val position = sortedLayer[i].split(".")
-                val positionCustom = position[0].toInt()
-                val positionNavigation = position[1].toInt()
+                val positionCustom = position[0].toInt() - 1
+                val positionNavigation = position[1].toInt() - 1
 
                 // Lấy folder màu hoặc lấy ảnh nếu không có màu, lấy ảnh navigation
                 // data/character_1/1.30
@@ -144,8 +143,8 @@ object AssetHelper {
                 }
                 val layerListModel = LayerListModel(positionCustom, positionNavigation, navigationImage, layer)
                 layerListModelList.add(layerListModel)
-                Log.d("nbhieu", "layerListModel: $layerListModel")
             }
+            layerListModelList.sortBy { it.positionNavigation }
             customList.add(CustomizeModel(character, avatar, layerListModelList))
             Log.d("nbhieu", "----------------------------------------------------------------------------------")
         }
@@ -154,6 +153,7 @@ object AssetHelper {
             Log.d("nbhieu", "customList: ${it}")
         }
         Log.d("nbhieu", "count time: ${System.currentTimeMillis() - start}")
+        return customList
     }
 
     private fun getDataNoColor(character: String, filesList: List<String>, folder: String): ArrayList<LayerModel> {

@@ -5,7 +5,7 @@ object ValueKey {
     const val DOWNLOAD_ALBUM_BACKGROUND = "Image Background"
     const val DATA_INTERNAL = "DATA_INTERNAL"
     const val QUANTITY_LAYER = 116
-    const val POSITION_API = 1
+    const val POSITION_API = 3
     const val DATA_FILE_INTERNAL = "data_json.txt"
     const val DATA_FILE_API_INTERNAL = "data_api_json.txt"
 
