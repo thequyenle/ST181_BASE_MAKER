@@ -13,6 +13,7 @@ import com.example.st181_halloween_maker.core.service.RetrofitClient
 import com.example.st181_halloween_maker.core.service.RetrofitPreventive
 import com.example.st181_halloween_maker.core.utils.HandleState
 import com.example.st181_halloween_maker.core.utils.SystemUtils.isFailBaseURL
+import com.example.st181_halloween_maker.core.utils.key.AssetsKey
 import com.example.st181_halloween_maker.core.utils.key.DomainKey
 import com.example.st181_halloween_maker.core.utils.key.ValueKey
 import com.example.st181_halloween_maker.data.custom.ColorModel
@@ -124,10 +125,10 @@ class DataViewModel : ViewModel() {
             val layerList = ArrayList<LayerListModel>(data.parts.size)
 
             data.parts.forEachIndexed { indexLayer, dataLayer ->
-                val layerName = dataLayer.parts.split(".")
+                val layerName = dataLayer.parts.split(AssetsKey.SPLIT_LAYER)
                 val positionCustom = layerName.first().toInt() - 1
                 val positionNavigation = layerName.last().toInt() - 1
-                val imageNavigation = "path navigation"
+                val imageNavigation = "${baseDomain}${DomainKey.SUB_DOMAIN}/${data.name}/${dataLayer.parts}/${DomainKey.IMAGE_NAVIGATION}"
                 val layer = getDataLayer(baseDomain, dataLayer, dataLayer.parts)
 
                 val layerListModel = LayerListModel(
@@ -168,7 +169,7 @@ class DataViewModel : ViewModel() {
         for (i in 1..part.quantity) {
             layerPath.add(
                 LayerModel(
-                    "$prefix/${i}$suffix",
+                    "$prefix${i}$suffix",
                     false,
                     arrayListOf()
                 )
@@ -189,7 +190,7 @@ class DataViewModel : ViewModel() {
                 listColor.add(
                     ColorModel(
                         "#${getColorCode[j]}",
-                        "$prefix/${getColorCode[j]}/${i}$suffix"
+                        "$prefix${getColorCode[j]}/${i}$suffix"
                     )
                 )
             }

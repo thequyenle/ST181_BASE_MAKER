@@ -6,14 +6,17 @@ object AssetsKey {
 
     const val DATA = "data"
     const val BACKGROUND_ASSET = "background"
+    const val RANDOM_LAYER = "RANDOM_LAYER"
+    const val NONE_LAYER = "NONE_LAYER"
+    const val SPLIT_LAYER = "-"
 
     const val FIRST_PNG = "1.png"
     const val FIRST_JPG = "1.jpg"
     const val FIRST_WEBP = "1.webp"
 
-    const val NAVIGATION_IMAGE_PNG = "item.png"
-    const val NAVIGATION_IMAGE_JPG = "item.jpg"
-    const val NAVIGATION_IMAGE_WEBP = "item.webp"
+    const val NAVIGATION_IMAGE_PNG = "nav.png"
+    const val NAVIGATION_IMAGE_JPG = "nav.jpg"
+    const val NAVIGATION_IMAGE_WEBP = "nav.webp"
 
 
     const val AVATAR_CHARACTER_PNG = "avatar.png"

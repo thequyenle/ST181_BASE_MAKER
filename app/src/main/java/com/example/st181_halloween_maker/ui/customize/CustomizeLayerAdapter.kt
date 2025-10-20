@@ -2,13 +2,16 @@ package com.example.st181_halloween_maker.ui.customize
 
 import android.content.Context
 import androidx.core.view.isVisible
+import com.bumptech.glide.Glide
 import com.example.st181_halloween_maker.core.base.BaseAdapter
 import com.example.st181_halloween_maker.core.extensions.gone
 import com.example.st181_halloween_maker.core.extensions.onSingleClick
 import com.example.st181_halloween_maker.core.extensions.visible
+import com.example.st181_halloween_maker.core.utils.DataLocal
 import com.example.st181_halloween_maker.core.utils.key.AssetsKey
 import com.example.st181_halloween_maker.data.custom.ItemNavCustomModel
 import com.example.st181_halloween_maker.databinding.ItemCusBinding
+import com.facebook.shimmer.ShimmerDrawable
 
 
 class CustomizeLayerAdapter(val context: Context) :
@@ -23,43 +26,31 @@ class CustomizeLayerAdapter(val context: Context) :
         item: ItemNavCustomModel,
         position: Int
     ) {
+        val shimmerDrawable = ShimmerDrawable().apply {
+            setShimmer(DataLocal.shimmer)
+        }
         binding.apply {
-//            val isBody = item.path.contains("/${AssetsKey.BODY_1}")
-//            vFocus.isVisible = item.isSelected
 
-//            when (position) {
-//                0 -> {
-//                    if (isBody) {
-//                        btnNone.gone()
-//                        imvImage.gone()
-//                        btnRandom.visible()
-//                    } else {
-//                        btnNone.visible()
-//                        imvImage.gone()
-//                        btnRandom.gone()
-//                    }
-//                }
-//
-//                1 -> {
-//                    if (!isBody) {
-//                        btnNone.gone()
-//                        imvImage.gone()
-//                        btnRandom.visible()
-//                    } else {
-//                        btnNone.gone()
-//                        imvImage.visible()
-//                        btnRandom.gone()
-//                        loadImageGlide(root, item.path, imvImage)
-//                    }
-//                }
-//
-//                else -> {
-//                    btnNone.gone()
-//                    imvImage.visible()
-//                    btnRandom.gone()
-//                    loadImageGlide(root, item.path, imvImage)
-//                }
-//            }
+            vFocus.isVisible = item.isSelected
+
+            when (item.path) {
+                AssetsKey.NONE_LAYER -> {
+                    btnNone.visible()
+                    btnRandom.gone()
+                    imvImage.gone()
+                }
+                AssetsKey.RANDOM_LAYER -> {
+                    btnNone.gone()
+                    btnRandom.visible()
+                    imvImage.gone()
+                }
+                else -> {
+                    btnNone.gone()
+                    imvImage.visible()
+                    btnRandom.gone()
+                    Glide.with(root).load(item.path).placeholder(shimmerDrawable).into(imvImage)
+                }
+            }
 
             binding.imvImage.onSingleClick { onItemClick.invoke(item, position) }
 

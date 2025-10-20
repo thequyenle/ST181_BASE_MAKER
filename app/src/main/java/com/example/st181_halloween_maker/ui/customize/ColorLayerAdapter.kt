@@ -12,15 +12,10 @@ import com.example.st181_halloween_maker.databinding.ItemColorBinding
 class ColorLayerAdapter(val context: Context) :
     BaseAdapter<ItemColorModel, ItemColorBinding>(ItemColorBinding::inflate) {
     var onItemClick: ((Int) -> Unit) = {}
-    override fun onBind(
-        binding: ItemColorBinding,
-        item: ItemColorModel,
-        position: Int
-    ) {
+    override fun onBind(binding: ItemColorBinding, item: ItemColorModel, position: Int) {
         binding.apply {
-
             imvImage.setBackgroundColor(item.color.toColorInt())
-//            vFocus.isVisible = item.isSelected
+            layoutFocus.isVisible = item.isSelected
             root.onSingleClick { onItemClick.invoke(position) }
         }
     }

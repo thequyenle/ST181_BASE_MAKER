@@ -10,12 +10,17 @@ import com.example.st181_halloween_maker.core.utils.KeyApp.ASSET_MANAGER
 import com.example.st181_halloween_maker.core.utils.KeyApp.AVATAR_ASSET
 import com.example.st181_halloween_maker.core.utils.KeyApp.AVATAR_STICKER_ASSET
 import com.example.st181_halloween_maker.core.utils.KeyApp.BG_ASSET
+import com.facebook.shimmer.Shimmer
 
 import kotlin.collections.forEach
 import kotlin.collections.sortedWith
 import kotlin.text.toIntOrNull
 
 object DataLocal {
+
+    val shimmer =
+        Shimmer.AlphaHighlightBuilder().setDuration(1800).setBaseAlpha(0.7f).setHighlightAlpha(0.6f)
+            .setDirection(Shimmer.Direction.LEFT_TO_RIGHT).setAutoStart(true).build()
     fun getLanguageList(): ArrayList<LanguageModel> {
         return arrayListOf(
             LanguageModel("hi", "Hindi", R.drawable.ic_flag_hindi),

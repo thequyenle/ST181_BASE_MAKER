@@ -123,7 +123,7 @@ object AssetHelper {
 
             for (i in 0 until sortedLayer.size) {
                 // Tách 1 và 30 (1.30)
-                val position = sortedLayer[i].split(".")
+                val position = sortedLayer[i].split(AssetsKey.SPLIT_LAYER)
                 val positionCustom = position[0].toInt() - 1
                 val positionNavigation = position[1].toInt() - 1
 

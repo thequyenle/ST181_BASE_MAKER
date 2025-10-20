@@ -91,4 +91,9 @@
     <string name="add_to_whatsapp">Add to Whatsapp</string>
     <string name="downloading">Downloading...</string>
     <string name="please_check_your_internet">Please check your internet!</string>
+    <string name="exit_your_customize">Exit your customize</string>
+    <string name="haven_t_saved_it_yet_do_you_want_to_exit">Haven’t saved it yet, do you want to exit?</string>
+    <string name="save_failed_please_try_again">Save failed! Please try again.</string>
+    <string name="reset_your_customize">Reset your customize</string>
+    <string name="change_your_whole_design_are_you_sure">Change your whole design, are you sure?</string>
 </resources>
