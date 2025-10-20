@@ -102,4 +102,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.9.0"
     //Lifecycle runtime (nếu dùng lifecycleScope)
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.9.0"
+    // swiperefreshlayout
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 }

@@ -30,22 +30,22 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/ic_back"
-                android:background="?attr/selectableItemBackgroundBorderless"/>
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back" />
 
             <TextView
                 android:id="@+id/txtTitle1"
                 style="@style/custom_text"
                 android:layout_width="0dp"
-                android:paddingVertical="2dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:layout_toStartOf="@+id/btnSettings"
                 android:layout_toEndOf="@+id/btnBack"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="4dp"
                 android:fontFamily="@font/creepstercaps_regular"
                 android:gravity="center"
+                android:paddingVertical="2dp"
                 android:text="@string/category"
+                android:textColor="#FFFFFF"
                 android:textSize="32sp" />
 
             <ImageView
@@ -55,25 +55,31 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="16dp"
-                android:visibility="invisible"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_settings" />
+                android:src="@drawable/ic_settings"
+                android:visibility="invisible" />
         </RelativeLayout>
     </RelativeLayout>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:spanCount="2"
-        app:layout_goneMarginTop="10dp"
-        android:paddingHorizontal="7dp"
-        tools:listitem="@layout/item_category"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/actionBar" />
+        app:layout_constraintTop_toBottomOf="@+id/actionBar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="12dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_goneMarginTop="10dp"
+            app:spanCount="2"
+            tools:listitem="@layout/item_category" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,23 +6,27 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-
 import com.example.st181_halloween_maker.core.extensions.onSingleClick
-import com.example.st181_halloween_maker.core.utils.SystemUtils.shimmerDrawable
+import com.example.st181_halloween_maker.core.utils.DataLocal.shimmer
+import com.example.st181_halloween_maker.data.custom.CustomizeModel
 import com.example.st181_halloween_maker.databinding.ItemCategoryBinding
+import com.facebook.shimmer.ShimmerDrawable
 import kotlin.collections.ArrayList
 
 
 class CategoryAdapter(val context: Context): RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
-    private val avatarList: ArrayList<String> = arrayListOf()
-    var onItemClick: ((String) -> Unit)? = null
+    private val avatarList: ArrayList<CustomizeModel> = arrayListOf()
+    var onItemClick: ((String, Int) -> Unit)? = null
 
     inner class CategoryViewHolder(private val binding : ItemCategoryBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(path:String, position: Int){
-                Glide.with(binding.root).load(path).placeholder(shimmerDrawable).error(shimmerDrawable).into(binding.imvImage)
+        fun bind(item: CustomizeModel, position: Int){
+            val shimmerDrawable = ShimmerDrawable().apply {
+                setShimmer(shimmer)
+            }
+            Glide.with(binding.root).load(item.avatar).placeholder(shimmerDrawable).error(shimmerDrawable).into(binding.imvImage)
 
             binding.root.onSingleClick {
-                onItemClick?.invoke(path)
+                onItemClick?.invoke(item.avatar, position)
             }
         }
     }
@@ -42,7 +46,7 @@ class CategoryAdapter(val context: Context): RecyclerView.Adapter<CategoryAdapte
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun submitList(list: ArrayList<String>) {
+    fun submitList(list: ArrayList<CustomizeModel>) {
         avatarList.clear()
         avatarList.addAll(list)
         notifyDataSetChanged()

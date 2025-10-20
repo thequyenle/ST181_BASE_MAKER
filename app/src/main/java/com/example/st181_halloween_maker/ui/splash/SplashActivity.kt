@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil.setContentView
+import androidx.lifecycle.lifecycleScope
 import com.example.st181_halloween_maker.R
 import com.example.st181_halloween_maker.core.base.BaseActivity
 import com.example.st181_halloween_maker.core.helper.AssetHelper
@@ -22,6 +23,7 @@ import com.example.st181_halloween_maker.databinding.ActivitySplashBinding
 import com.example.st181_halloween_maker.ui.home.DataViewModel
 import com.example.st181_halloween_maker.ui.intro.IntroActivity
 import com.example.st181_halloween_maker.ui.language.LanguageActivity
+import kotlinx.coroutines.launch
 import java.util.ArrayList
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>() {
@@ -41,22 +43,25 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
         viewModel.ensureData(this)
 
-
-//        val handle = Handler()
-//        handle.postDelayed({
-//            if (SystemUtils.isFirstLang(this@SplashActivity)) {
-//                startActivity(Intent(this@SplashActivity, LanguageActivity::class.java))
-//                check = true
-//                finishAffinity()
-//            } else {
-//                startActivity(Intent(this@SplashActivity, IntroActivity::class.java))
-//                check = true
-//                finishAffinity()
-//            }
-//
-//        }, 3000)
     }
 
+    override fun dataObservable() {
+        lifecycleScope.launch {
+            viewModel.allData.collect { data ->
+                if (data.isNotEmpty()){
+                    if (SystemUtils.isFirstLang(this@SplashActivity)) {
+                        startActivity(Intent(this@SplashActivity, LanguageActivity::class.java))
+                        check = true
+                        finishAffinity()
+                    } else {
+                        startActivity(Intent(this@SplashActivity, IntroActivity::class.java))
+                        check = true
+                        finishAffinity()
+                    }
+                }
+            }
+        }
+    }
     override fun viewListener() {
 
     }
