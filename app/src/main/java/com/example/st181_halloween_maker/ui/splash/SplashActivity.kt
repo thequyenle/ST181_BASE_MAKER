@@ -6,6 +6,7 @@ import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -18,12 +19,14 @@ import com.example.st181_halloween_maker.core.utils.SystemUtils
 import com.example.st181_halloween_maker.core.utils.key.AssetsKey
 import com.example.st181_halloween_maker.data.custom.LayerListModel
 import com.example.st181_halloween_maker.databinding.ActivitySplashBinding
+import com.example.st181_halloween_maker.ui.home.DataViewModel
 import com.example.st181_halloween_maker.ui.intro.IntroActivity
 import com.example.st181_halloween_maker.ui.language.LanguageActivity
 import java.util.ArrayList
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>() {
     private var check = false
+    private val viewModel: DataViewModel by viewModels()
     override fun setViewBinding(): ActivitySplashBinding {
         return ActivitySplashBinding.inflate(LayoutInflater.from(this))
     }
@@ -36,7 +39,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
             finish(); return;
         }
 
-        AssetHelper.getDataFromAsset(this)
+        viewModel.ensureData(this)
 
 
 //        val handle = Handler()

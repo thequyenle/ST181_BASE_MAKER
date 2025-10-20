@@ -1,4 +1,4 @@
-package com.girlmaker.create.avatar.creator.model
+package com.example.st181_halloween_maker.data.model
 
 data class PartAPI(
     val position: String,
@@ -7,6 +7,4 @@ data class PartAPI(
     val quantity: Int
 )
 
-data class Dream(
-        val girlName: String, val partsGirl: List<PartAPI>
-)
+data class DataAPI(val name: String, val parts: List<PartAPI>)

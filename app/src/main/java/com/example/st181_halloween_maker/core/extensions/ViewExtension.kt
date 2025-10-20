@@ -81,6 +81,13 @@ internal fun Activity.startIntent(targetActivity: Class<*>, value: String) {
     startActivity(intent)
 }
 
+internal fun Activity.startIntent(targetActivity: Class<*>, value: Int) {
+    val intent = Intent(this, targetActivity)
+    intent.putExtra(INTENT_KEY, value)
+    startActivity(intent)
+}
+
+
 internal fun Activity.startIntent(targetActivity: Class<*>, key: String, value: String) {
     val intent = Intent(this, targetActivity)
     intent.putExtra(key, value)

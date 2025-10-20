@@ -17,10 +17,14 @@ import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.example.st181_halloween_maker.core.custom.StrokeTextView
+import com.example.st181_halloween_maker.core.dialog.LoadingDialog
 import com.example.st181_halloween_maker.core.extensions.handleBack
 import com.example.st181_halloween_maker.core.extensions.hideNavigation
 import com.example.st181_halloween_maker.core.extensions.select
 import com.example.st181_halloween_maker.core.utils.SystemUtils
+import com.example.st181_halloween_maker.core.utils.SystemUtils.setLocale
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 import kotlin.let
 
@@ -30,6 +34,10 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
     }
 
     lateinit var binding: T
+
+    protected val loadingDialog: LoadingDialog by lazy {
+        LoadingDialog(this)
+    }
 
     protected abstract fun setViewBinding(): T
 
@@ -172,5 +180,24 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
             0f, 0f, 0f, height, intArrayOf(Color.parseColor("#0D8AFC"), Color.parseColor("#33F0B0")), null, Shader.TileMode.CLAMP
         )
         textView.paint.shader = textShader
+    }
+
+    suspend fun showLoading() {
+        withContext(Dispatchers.Main) {
+            if (loadingDialog.isShowing.not()) {
+                setLocale(this@BaseActivity)
+                loadingDialog.show()
+            }
+        }
+    }
+
+
+    suspend fun dismissLoading(isBlack: Boolean = false) {
+        withContext(Dispatchers.Main) {
+            if (loadingDialog.isShowing) {
+                loadingDialog.dismiss()
+                hideNavigation(isBlack)
+            }
+        }
     }
 }

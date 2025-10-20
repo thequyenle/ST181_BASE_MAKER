@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="@drawable/img_bg_custom"
     android:layout_height="match_parent"
+    android:background="@drawable/img_bg_custom"
     tools:context=".ui.customize.CustomizeActivity">
 
     <RelativeLayout
@@ -38,27 +38,26 @@
                 android:id="@+id/btnNext"
                 android:layout_width="48dp"
                 android:layout_height="32dp"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                android:background="@drawable/ic_save_next"
-                android:layout_marginEnd="16dp">
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/ic_save_next">
+
                 <TextView
                     android:id="@+id/txtNext"
                     style="@style/custom_text"
                     android:layout_width="40dp"
-                    android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/londrina_solid_regular"
-                    android:text="@string/next"
-                    android:textSize="16sp"
                     android:layout_gravity="center"
-                    android:textColor="@color/orange"/>
+                    android:fontFamily="@font/londrina_solid_regular"
+                    android:gravity="center"
+                    android:text="@string/next"
+                    android:textColor="@color/orange"
+                    android:textSize="16sp" />
             </FrameLayout>
 
 
-
         </RelativeLayout>
-
 
 
     </RelativeLayout>
@@ -76,31 +75,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/actionBar"
         app:layout_constraintVertical_bias="0.0" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="20dp"
-        android:paddingHorizontal="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/bg_bg_cus_item"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp"
         android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/actionBar"
-        >
+        app:layout_constraintTop_toBottomOf="@id/actionBar">
 
         <ImageView
             android:id="@+id/btnFlip"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/ic_flip"/>
+            android:src="@drawable/ic_flip" />
+
         <ImageView
             android:id="@+id/btnReset"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginTop="4dp"
-            android:src="@drawable/ic_reset"/>
+            android:src="@drawable/ic_reset" />
     </LinearLayout>
 
     <!-- gl0625 -->
@@ -112,23 +112,23 @@
         app:layout_constraintGuide_percent="0.625" />
 
 
-
     <FrameLayout
         android:id="@+id/layoutRcvColor"
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        android:visibility="visible"
         android:layout_marginBottom="8dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/gl0625">
+
         <LinearLayout
             android:id="@+id/layoutRcv2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="bottom"
-            android:gravity="start"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="90dp"
             android:background="@drawable/bg_color_cus"
-            android:layout_marginStart="16dp"
+            android:gravity="start"
             android:orientation="horizontal">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -153,11 +153,11 @@
         android:id="@+id/btnRandom"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:src="@drawable/ic_random"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_random"
         app:layout_constraintBottom_toTopOf="@id/gl0625"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- RCV -->
     <FrameLayout
@@ -165,7 +165,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/img_bg_layer_cus"
-        app:layout_constraintBottom_toTopOf="@id/layoutNav"
+        app:layout_constraintBottom_toTopOf="@id/rcvNavigation"
         app:layout_constraintTop_toBottomOf="@+id/gl0625">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -182,12 +182,13 @@
     <!-- Navigation -->
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/layoutNav"
+        android:id="@+id/rcvNavigation"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:background="@drawable/img_bg_layer_cus"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_marginBottom="2dp"
+        android:background="@drawable/img_bg_layer_cus"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_navi">
 

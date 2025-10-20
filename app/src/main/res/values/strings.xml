@@ -90,4 +90,5 @@
     <string name="add_to_telegram">Add to TeleGram</string>
     <string name="add_to_whatsapp">Add to Whatsapp</string>
     <string name="downloading">Downloading...</string>
+    <string name="please_check_your_internet">Please check your internet!</string>
 </resources>
