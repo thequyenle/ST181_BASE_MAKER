@@ -48,7 +48,6 @@ class CategoryActivity : BaseActivity<ActivityCategoryBinding>() {
                 }
             }
         }
-
     }
 
     override fun viewListener() {
