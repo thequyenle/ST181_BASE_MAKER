@@ -71,7 +71,7 @@
                     android:textColor="@color/white"
                     android:textSize="48sp" />
 
-                <com.example.st181_halloween_maker.core.custom.StrokeTextView
+                <com.example.animalocmaker.core.custom.StrokeTextView
                     android:id="@+id/txtCreate1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
                     android:textColor="@color/white"
                     android:textSize="48sp" />
 
-                <com.example.st181_halloween_maker.core.custom.StrokeTextView
+                <com.example.animalocmaker.core.custom.StrokeTextView
                     android:id="@+id/txtSticker1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
                     android:textColor="@color/white"
                     android:textSize="48sp" />
 
-                <com.example.st181_halloween_maker.core.custom.StrokeTextView
+                <com.example.animalocmaker.core.custom.StrokeTextView
                     android:id="@+id/txtCreation1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
